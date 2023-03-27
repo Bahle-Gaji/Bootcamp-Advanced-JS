@@ -134,3 +134,35 @@ theList[2] = 'MIDDLE';
 
 theList.push('LAST');
 // console.log(theList);
+
+
+//Company Product Catalog
+let inventory = [];
+
+let item1 = {
+    name: 'UAG Toaster',
+    model: 'XA1',
+    cost: 200,
+    quantity: 7
+};
+
+let item2 = {
+    name: 'UAG Oven',
+    model: 'C6RT',
+    cost: 600,
+    quantity: 4
+};
+
+let item3 = {
+    name: ' UAG Airfryer',
+    model: 'UV78JY',
+    cost: 250,
+    quantity: 5
+};
+
+inventory.push(item1);
+inventory.push(item2);
+inventory.push(item3);
+// console.log(inventory);
+
+// console.log(inventory[2].quantity);
