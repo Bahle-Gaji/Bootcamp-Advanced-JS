@@ -107,3 +107,30 @@ people.friends.push(friend2);
 
 people.friends.push(friend3);
 // console.log(people);
+
+/*-----Chapter Projects-----*/
+
+//Manipulating an Array
+const theList = [
+    'Laurence', 'Svekis', true, 35, null, undefined, 
+{test: 'one', score: 55}, ['one', 'two']
+];
+
+theList.pop();
+theList.pop();
+theList.pop();
+theList.pop();
+theList.shift();
+// console.log(theList);
+
+theList.unshift('FIRST');
+// console.log(theList);
+
+theList[3] = 'hello World';
+// console.log(theList);
+
+theList[2] = 'MIDDLE';
+// console.log(theList);
+
+theList.push('LAST');
+// console.log(theList);
