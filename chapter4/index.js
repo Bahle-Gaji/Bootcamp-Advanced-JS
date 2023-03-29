@@ -71,69 +71,71 @@ let result = 'My Selection: ';
 
 switch(prize) {
     case 0:
-        result += 'Casio watch';
-        result += ' ';
-        result += 'R100 cash';
+        result += 'Seiko 5 Field Sports SRPG27 Watch';
+        result += ' and';
+        result += 'R800 cash!';
         break;
 
     case 1:
-        result += 'Pressure cooker';
-        result += ' ';
-        result += 'R100 cash';
+        result += 'UAG Pressure cooker';
+        result += ' and';
+        result += 'R1000 cash!';
         break;
 
     case 2:
-        result += ' 55\'Samsung TV';
-        result += ' ';
-        result += 'R100 cash';
+        result += ' 55" Samsung Smart TV';
+        result += ' and';
+        result += 'R1000 cash!';
     break;
 
     case 3:
-        result += 'iPhone 12';
-        result += ' ';
-        result += 'R100 cash';
+        result += 'Apple iPhone 12 Black 64GB';
+        result += ' and';
+        result += 'R500 cash!';
     break;
 
     case 4:
-        result += 'Casio watch';
-        result += ' ';
-        result += 'R1000 cash';
+        result += 'Bremont Jaguar C-Type Chronograph Watch';
+        result += ' and';
+        result += 'R1000 cash!';
     break;
 
     case 5:
-        result += 'Beats Headphones';
-        result += ' ';
-        result += 'R500 cash';
+        result += 'Beats Fit Pro Earbuds';
+        result += ' and';
+        result += 'R500 cash!';
     break;
 
     case 6:
-        result += 'Candy pack';
-        result += ' ';
-        result += 'R100 cash';
+        result += 'Food Basket';
+        result += ' and';
+        result += 'R100 cash!';
     break;
 
     case 7:
-        result += 'Casio watch';
-        result += ' ';
-        result += 'R800 cash';
+        result += 'Ster-Kinekor Voucher worth R250';
+        result += ' and';
+        result += 'R800 cash!';
     break;
 
     case 8:
-        result += 'Rolex Watch';
-        result += ' ';
-        result += 'R1000 cash';
+        result += 'Rolex Day-Date Watch';
+        result += ' and';
+        result += 'R1000 cash!';
     break;
 
     case 9:
-        result += 'Casio watch';
-        result += ' ';
-        result += 'R500 cash';
+        result += '10-Piece Kitchenware set';
+        result += ' and';
+        result += 'R500 cash!';
     break;
 
     case 10:
-        result += 'Casio watch';
-        result += ' ';
-        result += 'R900 cash';
+        result += '35" Samsung Smart TV';
+        result += ' and';
+        result += 'R900 cash!';
     break;
     
 };
+
+alert(result);
