@@ -265,3 +265,23 @@
 // };
 
 
+
+/*-----Chapter Project-----*/
+
+let arrayTable = [];
+let mult = 12;
+
+outer:
+for(let i = 1; i <= mult; i++){
+    let tempArray = [];
+
+    inner:
+    for(let j = 1; j <= 10; j++){
+        tempArray.push(i * j)
+    };
+
+    arrayTable.push(tempArray);
+};
+
+console.log(arrayTable);
+console.table(arrayTable);
