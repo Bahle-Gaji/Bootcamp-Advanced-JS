@@ -7,7 +7,66 @@
     <title>Chapter 9</title>
 </head>
 <body>
-    
+
+    <!-- The Dom -->
+
+    <!-- <h1 class="output">Hello World</h1>
+    <div class="output">Test</div> -->
+   
+
+    <!--Practice exercise 9.3-->
+
+    <!-- <div class="output"></div>
+    <script>
+
+        const output = document.querySelector('.output');
+
+        output.textContent = "Hello";
+        output.classList.add('red');
+        output.id = 'tester';
+        output.style.backgroundColor = 'red';
+        output.textContent = document.URL;
+
+    </script> -->
+
+
+    <!-- Chapter Project -->
+
+    <div class="output">
+        <h1>Hello</h1>
+        <div>Test</div>
+        <ul>
+            <li id="one">One</li>
+            <li class="red">Two</li>
+        </ul>
+        <div>Test</div>
+    </div>
+
+    <script>
+
+        const output = document.querySelector('.output');
+        const mainList = document.querySelector('ul');
+        mainList.id = 'mainList';
+        
+        const divs = document.querySelectorAll('div');
+        console.log(divs);
+
+        for(let i = 0; i < divs.length; i++){
+            console.log(divs[i].tagName);
+
+            divs[i].id = "id-" + (i + 1);
+
+            if(i % 2 == 0){
+                divs[i].style.color = 'blue';
+            }
+            else{
+                divs[i].style.color = 'red';
+            }
+        }
+
+    </script>
+
+
     <script src="index.js"></script>
 </body>
 </html>
