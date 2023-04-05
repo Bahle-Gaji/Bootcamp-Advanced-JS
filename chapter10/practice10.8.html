@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Complete JavaScript Course</title>
+</head>
+
+<body>
+    <div id="message"></div>
+    <div id="output"></div>
+
+    <script>
+        const namesArr = ['Jennifer', 'Carrol', 'Matthew', 'Akhona', 'Themba'];
+        let message = document.getElementById('message');
+
+        build();
+        function build(){
+            let html = '<table>';
+                namesArr.forEach((elem, index) => {
+                    html += `<tr class="box", 
+                    data-row="${index + 1}", data-name="${elem}", onclick="getData(this)"><td>${elem}</td><td>${index + 1}</tr>`
+                });
+
+            html += '</table>';
+
+            document.getElementById('output').innerHTML = html;
+        };
+
+        function getData(elem){
+            let row = elem.getAttribute('data-row');
+            let name = elem.getAttribute('data-name');
+
+            message.innerHTML = `${name} is in row ${row}`
+        };
+
+    </script>
+</body>
+
+</html>

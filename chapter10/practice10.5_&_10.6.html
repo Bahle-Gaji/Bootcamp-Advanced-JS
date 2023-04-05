@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice execise 10.5
+    </title>
+</head>
+<body>
+    <h1 class="same-class">Hi there</h1>
+    <p class="same-class">This is sample text</p>
+    <div class="same-class">This is text in a div</div>
+    <div class="same-class">Another div</div>
+
+    <script>
+        let element = document.querySelector('.same-class');
+        console.log(element);
+
+        //Practice 10.6
+        let allElements = document.querySelectorAll('.same-class');
+        console.log(allElements);
+
+        allElements.forEach(ele => console.log(ele));
+        
+    </script>
+</body>
+</html>

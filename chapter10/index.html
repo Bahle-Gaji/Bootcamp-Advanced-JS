@@ -7,7 +7,106 @@
     <title>Chapter 10</title>
 </head>
 <body>
+    <!-- <h1>Let's find the treasure</h1>
+    <div id="forest">
+        <div id="tree1">
+            <div id="squirrel"></div>
+            <div id="flower"></div>
+        </div>
+        <div id="tree2">
+            <div id="shrubbery">
+                <div id="treasure"></div>
+            </div>
+            <div id="mushroom">
+                <div id="bug"></div>
+            </div>
+        </div>
+    </div> -->
     
+
+    <!-- Practice exercise 10.2 -->
+    <!-- <p id="exercise">Doing Exercise 10.2 now</p>
+    <script>
+        let element = document.getElementById('exercise');
+        console.log(element);
+    </script> -->
+
+
+    <!-- Manipulating element style -->
+    <!-- <p id="magic">I might disappear and appear.</p>
+    <button onclick="toggleDisplay()">Magic!</button>     
+    <script>
+    function toggleDisplay(){
+        let p = document.getElementById("magic");
+
+        if(p.style.display === "none") {
+            p.style.display = "block";
+        } 
+        else {
+            p.style.display = "none";
+        }
+    };
+    </script> -->
+    
+
+    <!-- Adding classes to elements -->
+    <!-- <!DOCTYPE html>
+    <html>
+    <body>
+    <script>
+        function disappear() {
+            document.getElementById("shape").classList.toggle("hide");
+        }
+    </script>
+    <style>
+        .hide {
+            display: none;
+        }
+
+        .square {
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+        }
+
+        .square.blue {
+            background-color: blue;
+        }
+    </style>
+    <div id="shape" class="square"></div>
+    <button onclick="disappear()">Disappear!</button>
+    </body>
+    </html> -->
+
+
+    <!-- Event Listeners on elements -->
+    <!-- <!DOCTYPE html>
+    <html>
+    <body>
+        <script>
+            window.onload = function () {
+                document.getElementById("square").addEventListener("click",
+                    changeColor);
+            }
+            function changeColor() {
+                let red = Math.floor(Math.random() * 256);
+                let green = Math.floor(Math.random() * 256);
+                let blue = Math.floor(Math.random() * 256);
+                this.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+            }
+        </script>
+        <div id="square" style="width:100px;height:100px;background-color:grey;">Click for magic</div>
+    </body>
+    </html> -->
+
+
+
+
+
+
+
+
+
     <script src="index.js"></script>
 </body>
 </html>
