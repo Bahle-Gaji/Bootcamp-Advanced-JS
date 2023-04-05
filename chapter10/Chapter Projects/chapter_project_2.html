@@ -1,0 +1,63 @@
+<!-- Interactive voting system -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Complete JavaScript Course</title>
+</head>
+
+<body>
+    <div id="message">Complete JavaScript Course</div>
+    <div>
+        <input type="text" id="addFriend">
+        <input type="button" id="addNew" value="Add Friend">
+    </div>
+    <table id="output"></table>
+
+    <script>
+        
+        let names = ['Matthew', 'Sthandile', 'Arnold', 'James', 'Heine'];
+        let addFriend = document.getElementById('addFriend');
+        let addNew = document.getElementById('addNew');
+        let table = document.getElementById('output');
+        let message = document.getElementById('message');
+
+        addNew.addEventListener('click', ()=>{
+            let newFriend = addFriend.value;
+            add(newFriend, names.length, 0);
+            names.push(newFriend);
+            console.log(names);
+            console.log(names[names.length - 1]);
+        })
+
+        function build(){
+            names.forEach((name, index) => {
+                add(name, index, 0);
+            })
+        };
+
+
+        function add(name, index, vote){
+            let row = document.createElement('tr');
+            let cells = `<td>${index + 1}</td>
+            <td>${name}</td>
+            <td>${vote}</td>`;
+
+            row.onclick = () => {
+                console.log(row.lastChild);
+                let count = Number(row.lastChild.textContent);
+                count++;
+                row.lastChild.textContent = count;
+            }
+
+            row.innerHTML = cells;
+            table.appendChild(row);
+
+        };
+        window.onload = build();
+
+    </script>
+</body>
+
+</html>
