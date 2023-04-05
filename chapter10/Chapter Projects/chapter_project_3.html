@@ -1,0 +1,128 @@
+<!-- Hangman Game -->
+
+<!doctype html>
+<html>
+
+<head>
+    <title>Hangman Game</title>
+    <style>
+        .gameArea {
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .box,
+        .boxD {
+            display: inline-block;
+            padding: 5px;
+        }
+
+        .boxE {
+            display: inline-block;
+            width: 40px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gameArea">
+        <div class="score"> </div>
+        <div class="puzzle"></div>
+        <div class="letters"></div>
+        <button>Start Game</button>
+    </div>
+
+    <script>
+
+        let words = ['onomatopoeia', 'consultant', 'visionary', 'microscopic'];
+
+        let mainGame = {current: '', solution: '', puzz: [], total: 0}
+
+        let score = document.querySelector('.score');
+        let puzzle = document.querySelector('.puzzle');
+        let letters = document.querySelector('.letters');
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', startGame);
+
+        function startGame(){
+
+            if(words.length > 0){
+                btn.style.display = 'none';
+                mainGame.total = 0;
+                mainGame.puzz = [];
+                mainGame.current = words.shift();
+                mainGame.solution = mainGame.current.split('');
+            }   
+
+            builder();
+        };
+
+        function updateScore() {
+            score.textContent = `Total Letters Left : ${mainGame.total}`;
+            if(mainGame.total <= 0) {
+                console.log("game over");
+                score.textContent = "Game Over";
+                btn.style.display = "block";
+            }
+        }
+
+        function generateElements(type,  parent, output, className){
+            let temp = document.createElement(type);
+            temp.classList.add(className);
+            temp.textContent = output;
+            parent.append(temp);
+            return temp;
+        }
+
+        function builder(){
+            letters.innerHTML = '';
+            puzzle.innerHTML = '';
+
+            mainGame.solution.forEach((letter) => {
+
+                let div = generateElements("div", puzzle, "-", "boxE");
+
+                if(letter == ' '){
+                    div.style.borderColor = "white";
+                    div.textContent = " ";
+                }
+                else {
+                mainGame.total++;
+                }
+                mainGame.puzz.push(div);
+                updateScore();
+            })
+
+            for (let i = 0; i < 26; i++) {
+                let temp = String.fromCharCode(65 + i);
+                let div = generateElements("div", letters, temp, "box");
+                let checker = function (e) {
+                    div.style.backgroundColor = "#ddd";
+                    div.classList.remove("box");
+                    div.classList.add("boxD");
+                    div.removeEventListener("click", checker);
+                    checkLetter(temp);
+                }
+                div.addEventListener("click", checker)
+            }
+
+        }
+
+        function checkLetter(letter) {
+                console.log(letter);
+                mainGame.solution.forEach((ele, index) => {
+                    if (ele.toUpperCase() == letter) {
+                        mainGame.puzz[index].textContent = letter;
+                        mainGame.total--;
+                        updateScore();
+                    };
+                });
+            };
+            
+    </script>
+</body>
+
+</html>
