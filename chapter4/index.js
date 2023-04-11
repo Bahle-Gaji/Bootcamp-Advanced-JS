@@ -3,10 +3,9 @@
 // console.log(myVariable);
 // if (myVariable){
 //     console.log('It is true')
-// }else(
+// }else{
 //     console.log('It is not true')
-// );
-
+// };
 
 
 /*-----Practice exercise 4.2-----*/
@@ -155,7 +154,7 @@
 // }
 // else {
 //     alert('Too low, try again')
-// }
+// };
 
 
 //Friend Checker Game
@@ -187,7 +186,7 @@
 // let message = "Player: " + options[playRandom] + " vs Computer: " + options[compRandom];
 
 // if (playRandom === compRandom) {
-//     message += "\nnIt's a tie";
+//     message += "\nIt's a tie";
 // } else if (playRandom > compRandom) {
 //     if (compRandom == 0 && playRandom == 2) {
 //         message += "\nComputer Wins";
