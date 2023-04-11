@@ -114,10 +114,8 @@ people.friends.push(friend3);
 /*-----Chapter Projects-----*/
 
 //Manipulating an Array
-const theList = [
-    'Laurence', 'Svekis', true, 35, null, undefined, 
-{test: 'one', score: 55}, ['one', 'two']
-];
+const theList = ['Laurence', 'Svekis', true, 35, null, undefined, {test: 'one', score: 55}, 
+    ['one', 'two'] ];
 
 theList.pop();
 theList.pop();
