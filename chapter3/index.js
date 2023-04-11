@@ -108,6 +108,9 @@ people.friends.push(friend2);
 people.friends.push(friend3);
 // console.log(people);
 
+
+
+
 /*-----Chapter Projects-----*/
 
 //Manipulating an Array
