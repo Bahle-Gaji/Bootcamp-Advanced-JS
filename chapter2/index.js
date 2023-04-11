@@ -5,8 +5,9 @@ let val1 = undefined;
 let val2 = null;
 let myNum = 1000;
 
-// console.log(typeof )
+// console.log(typeof val1) 
 
+// let tern = myNum > 6 ? console.log(true) : console.log(false);
 
 // Practice exercise 2.2
 let name = 'Bahle', age  = 20; canCode = true;
@@ -38,9 +39,9 @@ let name = 'Bahle', age  = 20; canCode = true;
 //Miles to kilometers converter
 // let miles = Number(prompt('Enter Miles: '));
 
-// let kms = miles * 1.60934;
+// let kms = miles * 1.60934; 
 
-// console.log(miles + 'mi is equal to ' + kms + 'kms.');
+// console.log(miles + 'mi is equal to ' + kms.toFixed(2) + 'kms.');
 
 //BMI 
 let inches = 72;
@@ -48,5 +49,6 @@ let lbs = 180;
 let kgs = lbs / 2.2046;
 let cm = inches * 2.54;
 console.log(kgs.toFixed(2), cm.toFixed(2));
-let bmi = kgs / (cm / 100 * cm / 100);
+
+let bmi = kgs / (cm / 100) **2;
 console.log(bmi.toFixed(2));
