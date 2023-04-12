@@ -244,26 +244,26 @@ let num2 = 15;
 /*-----Chapter Project-----*/
 
 // recursive function
-function recursion(x){
-    console.log(x);
-    if(x < 10){
-        return recursion(x + 1);
-    };
-    return;
-};
+// function recursion(x){
+//     console.log(x);
+//     if(x < 10){
+//         return recursion(x + 1);
+//     };
+//     return;
+// };
 
-recursion(0);
+// recursion(0);
 
 
 //Set timeout order
 
-let one = () => console.log('One');
-let two = () => console.log('Two');
-let three = () => {console.log('Two'), one(), two()};
-let four = () => {
-    console.log('Four');
-    setTimeout(one, 0);
-    three();
-};
+// let one = () => console.log('One');
+// let two = () => console.log('Two');
+// let three = () => {console.log('Two'), one(), two()};
+// let four = () => {
+//     console.log('Four');
+//     setTimeout(one, 0);
+//     three();
+// };
 
-four();
+// four();
