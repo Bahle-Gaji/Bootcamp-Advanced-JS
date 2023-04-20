@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build your own analytics</title>
+    <style>
+        .box{
+            height: 50px;
+            width: 50px;
+            border: dashed 1px black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">Box 1</div>
+        <div class="box" id="box2">Box 2</div>
+        <div class="box" id="box3">Box 3</div>
+        <div class="box" id="box4">Box 4</div>
+    </div>
+
+
+    <script>
+
+        let array = [];
+
+        let container = document.querySelector('.container');
+        container.addEventListener('click', (e) => {
+            let elem = e.target;
+            if(elem.id){
+                let track = {};
+                track.textContent = elem.textContent;
+                track.id = elem.id;
+                track.tagName = elem.tagName;
+                track.className = elem.className;
+
+                array.push(track);
+                console.log(array); 
+            }
+        })
+    </script>
+</body>
+</html>
