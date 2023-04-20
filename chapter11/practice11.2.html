@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practice exercise 11.2</title>
+    <style>
+        div{
+            border: 1px dashed;
+            width: 25vw;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div>Red</div>
+    <div>Orange</div>
+    <div>Yellow</div>
+    <div>Green</div>
+    <div>Blue</div>
+    <div>Indigo</div>
+    <div>Violet</div>
+
+    <script>
+        let myDivs = document.querySelectorAll('div');
+
+        myDivs.forEach((div) => {
+            div.addEventListener('click', ()=>{
+                div.style.backgroundColor = div.textContent;
+            })
+        })
+    </script>
+</body>
+</html>

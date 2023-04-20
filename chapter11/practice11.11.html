@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Exercise 11.11</title>
+    <style>
+        .mover{
+            height: 80px;
+            width: 80px;
+            position: absolute;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="mover"></div>
+
+    <script>
+        let box = document.querySelector('.mover');
+
+        let attr = {
+            speed: 10,
+            direction: 1,
+            position: 0
+        }
+
+        box.addEventListener('click', (e) => {
+            let counter = 30;
+
+            setInterval(function(){
+            if(counter < 1){
+                clearInterval();
+            }
+            else {
+                if (attr.position > 800 || attr.position < 0) {
+                    attr.direction *= -1;
+                }
+                counter--;
+                attr.position += counter * attr.direction;
+                box.style.left = attr.position + "px";
+                console.log(attr.position);
+            }
+        }, 2);
+
+    });
+    </script>
+</body>
+</html>

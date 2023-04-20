@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <title>JS Tester</title>
+</head>
+<body>
+    <div class="output1"></div>
+    <input type="text" placeholder="First Name" name="first">1<br>
+    <input type="text" placeholder="Last Name" name="last">2<br>
+
+    <script>
+
+        let output = document.querySelector('.output1');
+        let firstName = document.querySelector('input[name="first"]');
+        let lastName = document.querySelector('input[name="last"]');
+
+        firstName.addEventListener('change', () => {
+                console.log('change1');
+                update(firstName.value);
+        })
+        lastName.addEventListener('change', () => {
+            console.log('change2');
+            update(lastName.value);
+        })
+
+
+        firstName.addEventListener('blur', () => {
+            console.log('blur1');
+        })
+        lastName.addEventListener('blur', () => {
+            console.log('blur2');
+        })
+
+
+        firstName.addEventListener('focus', () => {
+            console.log('focus1');
+        })
+        lastName.addEventListener('focus', () => {
+            console.log('focus2');
+        })
+
+        function update(val){
+            output.textContent = val;
+        };
+
+    </script>
+</body>
+</html>

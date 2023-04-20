@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11</title>
+
+    <style>
+        .box {
+        height: 200px;
+        width: 200px;
+        padding: 20px;
+        margin: 0 50px;
+        display: inline-block;
+        border: 1px solid black;
+        }
+        #dragme {
+        background-color: red;
+        }
+        </style>
+
+        <style>
+            div {
+                background-color: purple;
+                width: 100px;
+                height: 100px;
+                position: absolute;
+            }
+        </style>
+</head>
+<body>
+    <!-- <div id="divvy" onmouseover="changeColor()" style="width: 100px; 
+        height: 100px; background-color: pink;">
+    </div> -->
+
+    <!-- <script>
+        function changeColor() {
+            document.getElementById("divvy").style.backgroundColor = "blue";
+        };
+    </script> -->
+
+
+
+    <!-- Mouse event handlers -->
+    <!-- <script>
+        window.onload = function donenow() {
+            console.log("hi");
+            document.getElementById("divvy").addEventListener("mousedown", 
+            function() { changeColor(this, "green"); });
+
+            document.getElementById("divvy").addEventListener("mouseup", 
+            function() { changeColor(this, "yellow"); });
+
+            document.getElementById("divvy").addEventListener("dblclick", 
+            function() { changeColor(this, "black"); });
+
+            document.getElementById("divvy").addEventListener("mouseout", 
+            function() { changeColor(this, "blue"); });
+        }
+
+        console.log("hi2");
+        function changeColor(el, color) {
+            el.style.backgroundColor = color;
+        }
+
+        </script> -->
+
+
+
+    <!-- The event target property -->
+        <!-- <button type="button" onclick="triggerSomething()">Click</button>
+        <script>
+            function triggerSomething() {
+            console.dir(event.target);
+        };
+        </script> -->
+
+        <!-- <div id="welcome">Hi there!</div>
+        <form>
+            <input type="text" name="firstname" placeholder="First name" />
+            <input type="text" name="lastname" placeholder="Last name" />
+            <input type="button" onclick="sendInfo()" value="Submit" />
+        </form>
+        <script>
+            function sendInfo() {
+                let p = event.target.parentElement;
+                message("Welcome " + p.firstname.value + " " + p.lastname.value);
+
+                console.log(event.target.parentElement);
+            }
+
+            function message(m) {
+                document.getElementById("welcome").innerHTML = m;
+            }
+        </script> -->
+
+
+
+        <!-- Onchange and Onblur -->
+            <!-- <div id="welcome">Hi there!</div>
+            <form>
+                <input type="text" name="firstname" placeholder="First name" onchange="logEvent()" />
+                <input type="text" name="lastname" placeholder="Last name" onblur="logEvent()" />
+                <input type="button" onclick="sendInfo()" value="Submit" />
+            </form>
+
+            <script>
+                function logEvent() {
+                    let p = event.target;
+                    if (p.name == "firstname") {
+                        message("First Name Changed to " + p.value);
+                    } 
+                    else {
+                        message("Last Name Changed to " + p.value);
+                    }
+                }
+
+                function sendInfo() {
+                    let p = event.target.parentElement;
+                    message("Welcome " + p.firstname.value + " " + p.lastname.value);
+                }
+
+                function message(m) {
+                    document.getElementById("welcome").innerHTML = m;
+                }
+            </script> -->
+
+        
+
+        <!-- Key event handler -->
+            <!-- <div id="wrapper">JavaScript is fun!</div>
+            <input type="text" name="myNum1" onkeypress="numCheck()">
+            <input type="text" name="myNum2" onkeypress="numCheck2()">
+            <script>
+                function numCheck() {
+                    message("Number: " + !isNaN(event.key));
+                    return !isNaN(event.key);
+                }
+                function numCheck2() {
+                    message("Not a number: " + isNaN(event.key));
+                    return isNaN(event.key);
+                }
+                function message(m) {
+                    document.getElementById('wrapper').innerHTML = m;
+                }
+            </script> -->
+
+
+
+        <!-- Drag and drop elements -->
+        <!-- <div class="box" ondrop="dDrop()" ondragover="nDrop()">
+            1
+            <div id="dragme" ondragstart="dStart()" draggable="true">Drag Me Please</div>
+        </div>
+
+        <div class="box" ondrop="dDrop()" ondragover="nDrop()">2</div>
+
+        <script>
+            let holderItem;
+
+            function dStart(){
+                holderItem = event.target;
+            }
+
+            function nDrop(){
+                event.preventDefault();
+            }
+
+            function dDrop(){
+                event.preventDefault();
+                if(event.target.className == 'box'){
+                    event.target.appendChild(holderItem);
+                }
+            }
+        </script> -->
+
+
+        <!-- Form Submission -->
+        <!-- <div id="wrapper"></div>
+        <form action="anotherpage.html" method="get" onsubmit="return valForm()">
+            <input type="text" id="firstName" name="firstName" placeholder="First name" />
+            <input type="text" id="lastName" name="lastName" placeholder="Last name" />
+            <input type="text" id="age" name="age" placeholder="Age" />
+            <input type="submit" value="submit" />
+        </form>
+        <script>
+            function valForm() {
+                var p = event.target.children;
+                if (p.firstName.value == "") {
+                    message("Need a first name!!");
+                    return false;
+                }
+                if (p.lastName.value == "") {
+                    message("Need a last name!!");
+                    return false;
+                }
+                if (p.age.value == "") {
+                    message("Need an age!!");
+                    return false;
+                }
+                return true;
+            }
+            function message(m) {
+                document.getElementById("wrapper").innerHTML = m;
+            }
+        </script> -->
+
+
+
+        <!-- Animating elements -->
+        <!-- <button onclick="toTheRight()">Go right</button>
+        <div id="block"></div>
+        
+        <script>
+            function toTheRight() {
+            let b = document.getElementById("block");
+            let x = 0;
+
+            setInterval(function () {
+                if (x === 600) {
+                clearInterval();
+                } 
+                else {
+                    x++;
+                    b.style.left = x + "px";
+                 }
+            }, 2);
+            
+            }
+        </script> -->
+           
+
+</body>
+</html> 

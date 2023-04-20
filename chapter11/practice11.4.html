@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practice exercise 11.4</title>
+</head>
+<body>
+    
+    <div class="div-box"></div>
+
+    
+    
+    <script>
+        let myDiv = document.querySelector('.div-box');
+        myDiv.textContent = 'hello world';
+        myDiv.style.width = '100px';
+        myDiv.style.height = '100px';
+        myDiv.style.backgroundColor = 'pink';
+
+        function colorChange(color, event){
+            console.log(color);
+            console.log(event.type);
+
+            myDiv.style.backgroundColor = color;
+        };
+
+        myDiv.addEventListener('mousedown', (event) => {
+            colorChange('green', event)
+        });
+
+        myDiv.addEventListener('mouseover', (event) => {
+            colorChange('red', event)
+        });
+
+        myDiv.addEventListener('mouseout', (event) => {
+            colorChange('yellow', event)
+        });
+
+        myDiv.addEventListener('mouseup', (event) => {
+            colorChange('blue', event)
+        });
+        
+    </script>
+</body>
+</html>

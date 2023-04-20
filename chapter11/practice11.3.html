@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practice 11.3</title>
+</head>
+<body>
+    
+
+    <script>
+
+        window.onload = (event) => {message('Window Ready', event);}
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            message('Document Ready', event);
+        });
+
+        function message(str, event){
+            console.log(str);
+            console.log(event);
+        };
+        // Order was moved around
+    </script>
+</body>
+</html>

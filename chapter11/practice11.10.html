@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Exercise 11.10</title>
+</head>
+<body>
+    
+    <form action="index.html" method="get">
+        First: <input type="text" placeholder="First"><br>
+        Last: <input type="text" placeholder="Last"><br>
+        Age:  <input type="number" placeholder="Age"><br>
+        <input type="submit" value="submit">
+    </form>
+
+    <script>
+        let form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            let error = false;
+
+            if(checker(form.First.value)){
+                console.log('First Name needed');
+                error = true;
+            }
+
+            if(checker(form.Last.value)){
+                console.log('Last Name needed');
+                error = true;
+            }
+
+            if(form.Age.value < 19){
+                console.log('Must be 19 or over');
+                error = true;
+
+            }
+
+            if (error){
+                e.preventDefault();
+                console.log('Please review the form');
+            }
+        });
+
+        function checker(str){
+            console.log(str.length)
+            if(str.length < 4){
+                return true;
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>
