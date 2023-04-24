@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 12</title>
+</head>
+<body>
+
+    <!-- using cookies -->
+    <!-- <input onchange="setCookie(this)" />
+    <button onclick="sayHi('name')">Let's talk, cookie!</button>
+    <p id="hi"></p> -->
+
+    <!-- localStorage -->
+    <div id="stored"></div>
+
+
+
+    <script>
+        // "use strict";
+        // -----Regular expressions-----
+
+        var text = 'I love JavaScript';
+        // console.log(text.match(/JavaScript/));
+
+        text = 'I love React and JavaScript';
+        // console.log(text.match(/javascript|react|nodejs/i));
+
+
+
+        // -----Character options-----
+
+        text = 'd';
+        // console.log(text.match(/[abcd]/));
+        // console.log(text.match(/[a-d]/));
+
+        text = 't';
+        // console.log(text.match(/[a-zA-Z]/));
+        // console.log(text.match(/[a-zA-Z0-9]/));
+
+        text = 'Just some text.';
+        // console.log(text.match(/\./g));  // Matches the fullstop
+
+        text = 'I am 29 years old.';
+        // console.log(text.match(/\d/g));  // Matches all digits
+
+        text = 'Coding is a lot of fun!';
+        // console.log(text.match(/\s/g));  // Matches all spaces, tabs and whitespace
+
+        text = 'In the end or at the beginning.';
+        // console.log(text.match(/\bin/gi));  //\b matches if it's at the beginning of a word
+
+
+
+        // -----Groups-----
+
+        text = 'I love JavaScript!';
+        // console.log(text.match(/(love|dislike)\s(javascript|spiders)/gi)); // Matches any of 4 combinations of love and dislike with javascript and spiders
+        // console.log(text.match(/[a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9]/g));
+        
+        text =  'You are doing great!';
+        // console.log(text.match(/n?g/gi));  // Matchs letter 'g' where it may or may not be preceded by 'n'
+
+        text = '1231231231';
+        // console.log(text.match(/(123)+/)); // Matches group 123 one or more times
+
+        text = 'abcabcabc';
+        // console.log(text.match(/(abc){1,2}/)); // Matches min 1 and max 2 repetitions
+
+        text = 'I love JavaScript!';
+        // console.log(text.match(/(?<language>javascript)/i));  // Specifies groups
+
+        
+        
+        // -----Practical Regex-----
+        // Searching and replacing strings
+
+        text = "That's not the case.";
+        // console.log(text.search(/case/i));
+
+        text = 'Coding is fun. Coding opens up a lot of opportunities.';
+        // console.log(text.replace('Coding', 'JavaScript'));
+        // console.log(text.replace(/Coding/g, 'JavaScript'));
+
+
+
+        // -----Email Validation-----
+        let emailPattern = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/g;
+        let validEmail = 'maaike_1234@email.com';
+        let invalidEmail = 'maaike@mail@.com';
+        // console.log(validEmail.match(emailPattern));
+        // console.log(invalidEmail.match(emailPattern));
+
+
+
+        // -----Functions and the arguments object-----
+
+        function test(a, b, c){
+            a = 'nice';
+            arguments[1] = 'javascript'
+            console.log('first:', a, arguments[0]);
+            console.log('second:', b, arguments[1]);
+            console.log('third:', c, arguments[2]);
+        };
+
+        // test('fun', 'js', 'secrets');
+
+
+
+        // -----JavaScript hoisting-----
+
+        x = 5;
+        // console.log(x);
+        var x;
+
+
+
+        // -----Using strict mode-----
+        
+        function sayHi(){
+            greeting = 'Hello!';
+            console.log(greeting);
+        }
+        // sayHi();
+
+
+
+        // -----Error Handling-----
+
+        // try {
+        //     trySomething();
+        // } catch (e){
+        //     console.log('Oh oh');
+        // } finally{
+        //     console.log('Error or no error, I will be logged!')
+        // }
+
+
+
+        // -----Using cookies-----
+        // document.cookie = 'name=Maaike;favoriteColor=black'
+        // document.cookie =''
+
+        // let cookie = decodeURIComponent(document.cookie);
+        // let cookieList = cookie.split(';');
+        // console.log(cookieList);
+        // for (let i = 0; i < cookieList.length; i++) {
+        //     let c = cookieList[i];
+        //     if (c.charAt(0) == " ") {
+        //         c = c.trim();
+        //     }
+        //     if (c.startsWith("name")) {
+        //         alert(c.substring(5, c.length)); 
+        //     }
+        // }
+        
+        // function setCookie(e) {
+        //     document.cookie = "name=" + e.value + ";";
+        // }
+
+        // function sayHi(key) {
+        //     let name = getCookie(key);
+        //     document.getElementById("hi").innerHTML = "Hi " + name;
+        // }
+
+        // function getCookie(key) {
+        //     let cookie = decodeURIComponent(document.cookie);
+        //     let cookieList = cookie.split(";");
+
+        //     for (let i = 0; i < cookieList.length; i++) {
+        //         let c = cookieList[i];
+
+        //         if (c.charAt(0) == " ") {
+        //             c = c.trim();
+        //         }
+        //         if (c.startsWith(key)) {
+        //             console.log("hi" + c);
+        //             return c.substring(key.length + 1, c.length);
+        //         }
+        //     }
+        // }
+
+        
+
+        // -----Local Storage-----
+        
+        // let message = "Hello storage!";
+        // localStorage.setItem("example", message);
+
+        // if (localStorage.getItem("example")) {
+        //     document.getElementById("stored").innerHTML = localStorage.getItem("example");
+        // }
+
+
+            
+        // -----Parsing JSON-----
+        let str = '{"name": "Maaike", "age": 30}';
+        let obj = JSON.parse(str);
+        console.log(obj.name, 'is', obj.age);
+
+        let dog = {
+            'name': 'wiesje',
+            'breed': 'dachshund'
+        };
+
+        let strdog = JSON.stringify(dog);
+        console.log(typeof strdog);
+        console.log(strdog);
+
+    </script>
+</body>
+</html>

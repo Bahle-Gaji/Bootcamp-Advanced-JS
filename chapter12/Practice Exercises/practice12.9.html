@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Exercise 12.9</title>
+</head>
+<body>
+    
+    <script>
+        let myList = [{
+                "name": "Learn JavaScript",
+                "status": true
+            },
+            {
+                "name": "Try JSON",
+                "status": false
+            }
+        ];
+
+        let newStr = JSON.stringify(myList);
+        console.log(newStr);
+
+        let newObj = JSON.parse(newStr);
+        console.log(newObj);
+    </script>
+</body>
+</html>
