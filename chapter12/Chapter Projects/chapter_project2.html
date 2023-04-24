@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+    <title>JavaScript Course</title>
+    <style>
+        .hide {
+            display: none;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.8em;
+            font-family: sans-serif;
+            font-style: italic;
+        }
+
+        input {
+            border-color: #ddd;
+            width: 400px;
+            display: block;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+
+    <form name="myform"> Email :
+        <input type="text" name="email"> <span class="error hide"></span>
+        <br> Password :
+        <input type="password" name="password"> <span class="error hide"></span>
+        <br> User Name :
+        <input type="text" name="userName"> <span class="error hide"></span>
+        <br>
+        <input type="submit" value="Sign Up">
+    </form>
+
+
+    <script>
+        let form = document.querySelector('form');
+        let inputs = document.querySelectorAll('input');
+        let errors = document.querySelectorAll('.error');
+        let required = ['email', 'userName'];
+        
+        form.addEventListener('submit', validate);
+
+        function validate(e) {
+            let data = {};
+            e.preventDefault();
+            errors.forEach(error => {
+                error.classList.add('hide');
+            })
+
+            // Checks if each individual input is valid
+            let error = false; // when invalid, error will be true
+
+            inputs.forEach(input => {
+                let attribute = input.getAttribute('name');
+                
+
+                if (attribute != null) {
+                    input.style.borderColor = '#ddd';
+
+                    if (input.value.length == 0 && required.includes(attribute)) {
+                        addError(input, 'Required Field', attribute);
+                        error = true;
+                    }
+
+                    //Checking email validity
+                    if (attribute == 'email') {
+                        let reg = /([A-Za-z0-9._-]+@[A-Za-z0-9._-]+\.[A-Za-z0-9]+)\w+/;
+                        let match = reg.test(input.value);
+
+                        if (!match) {
+                            addError(input, 'Invalid Email', attribute);
+                            error = true;
+                        }
+                    }
+
+                    //Checking password validity
+                    if (attribute == 'password') {
+                        let reg = /([a-zA-Z0-9]+$)/
+                        let match = reg.test(input.value);
+
+                        if (!match) {
+                            addError(input, 'Only numbers and letters', attribute);
+                            error = true;
+                        }
+
+                        if (!(input.value.length > 3 && input.value.length < 9)) {
+                            addError(input, "Needs to be between 3-8 characters", attribute);
+                            error = true;
+                        }
+
+                    }
+                    data[attribute] = input.value;
+                }
+
+            });
+            if(!error){
+                form.submit();
+            }
+        }
+
+        function addError(el, mes, fieldName) {
+            let temp = el.nextElementSibling;
+            temp.classList.remove("hide");
+            temp.textContent = fieldName.toUpperCase() + " " + mes;
+            el.style.borderColor = "red";
+            el.focus();
+        }
+        
+            
+
+    </script>
+</body>
+</html>
