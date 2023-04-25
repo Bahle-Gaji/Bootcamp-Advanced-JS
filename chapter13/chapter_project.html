@@ -32,8 +32,8 @@
 
         function check(val){
             login(val)
-            .then(value => {console.log('Approve: '); console.log(val)})
-            .catch(value => {console.log('Rejected: '); console.log(val)})
+            .then(value => {console.log(`Approve: ${val}`)})
+            .catch(value => {console.log(`Rejected: ${val}`)})
         }
 
         check(37373);
