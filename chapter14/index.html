@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 14</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+
+        #canvas1 {
+            border: solid 1px black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <input type="file" multiple onchange="uploadFile(this.files)"/> -->
+    <!-- <input type="file" onchange="uploadAndReadFile(this.files)"/>
+    <div id="message"></div> -->
+
+
+    <!-- HTML5 Canvas -->
+    <!-- <canvas id="c1"></canvas> -->
+
+    <!-- Dynamic Canvas -->
+    <canvas id="canvas1"></canvas>
+
+
+
+
+
+    <script>
+
+        // ------Checking if browser has FileREader------
+
+        // let message = document.getElementById('message');
+        // if (window.FileReader) {
+        //     message.innerText = 'Good to go';
+        // }
+        // else{
+        //     message.innerText = 'No FileReader :(';
+        // }
+
+
+        // ------Uploading files-----
+
+        // let message = document.getElementById('message');
+
+        // Uploading one file
+        // function uploadFile(files){
+        //     console.log(files[0]);
+        //     message.innerText = files[0].name;
+        // }
+
+        // Uploading multiple files
+        // function uploadFile(files){
+        //     for(let i = 0; i < files.length; i++){
+        //         message.innerHTML += files[i].name + '<br>'
+        //     }
+        // }
+
+
+        // ------Reading files------
+        // function uploadAndReadFile(files) {
+        //     let fr = new FileReader();
+        //     fr.onload = function (e) {
+        //         message.innerHTML = e.target.result;
+        //     };
+        //     fr.readAsText(files[0]);
+        // }
+
+
+        // ------Getting postion data with GeoLocation------
+
+        // window.onload = init;
+
+        // function init() {
+        //     console.dir(navigator.geolocation.getCurrentPosition(showCurrentPostion));
+        // }  
+
+        // function showCurrentPostion(data){
+        //     console.dir(data);
+        // }
+
+
+        // ------HTML5 Canvas------
+        // let canvas = document.getElementById('c1');
+        // let ctx = canvas.getContext('2d');
+        // canvas.width = 500;
+        // canvas.height = 500;
+        // ctx.fillStyle = 'pink';
+        // ctx.fillRect(20, 40, 100, 100);
+
+
+        //Dynamic canvas
+        let canvas = document.getElementById('canvas1');
+        let ctx = canvas.getContext('2d');
+        //line
+        // canvas.width = 200;
+        // canvas.height = 100;
+        // ctx.lineWidth = 2;
+        // ctx.moveTo(0, 20);
+        // ctx.lineTo(50, 100);
+        // ctx.stroke();
+
+        //circle
+        // canvas.width = 150;
+        // canvas.height = 200;
+        // ctx.beginPath();
+        // ctx.arc(75, 100, 50, 0, Math.PI * 2);
+        // ctx.stroke();
+
+
+        //Adding text to the canvas
+        canvas.width = 200;
+        canvas.height = 200;
+        ctx.font = '24px Arial';
+        let txt = 'Hi canvas!';
+        ctx.fillText(txt, 10, 35);
+    </script>
+</body>
+
+</html>
