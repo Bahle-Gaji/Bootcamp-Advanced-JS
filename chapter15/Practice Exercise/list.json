@@ -1,0 +1,14 @@
+[
+    {
+        "firstName": "Bahle",
+        "lastName": "Gaji",
+        "City": "Gotham",
+        "Occupation": "Superhero"
+    },
+    {
+        "firstName": "Bruce",
+        "lastName": "Wayne",
+        "City": "Metropolis",
+        "Occupation": "Detective"
+    }
+]

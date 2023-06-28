@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Exercise 15.1</title>
+</head>
+
+<body>
+
+    <script>
+        const url = "list.json";
+        fetch(url)
+            .then(res => res.json())
+            .then((data) => {
+                data.forEach((el) => {
+                    console.log(`${el.firstName} is a ${el.Occupation} in ${el.City} City.`);
+                });
+            });
+    </script>
+</body>
+
+</html>
